@@ -99,8 +99,14 @@ function AbogadoChatEnhanced() {
   };
 
   const formatText = (text) => {
-    // Simple markdown-like formatting
-    return text
+    // Escape HTML entities first to prevent XSS, then apply safe markdown-like formatting
+    const escaped = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+    return escaped
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br/>');
   };
