@@ -1,8 +1,10 @@
-import AbogadoChat from './components/AbogadoChat';
+import Dashboard from './components/Dashboard';
+
 export const metadata = {
-  title: 'Abogado Online IA - Argentina',
-  description: 'Consultas legales con inteligencia artificial basada en leyes argentinas',
+  title: 'Abogado Online IA - Sistema Legal Argentino Avanzado',
+  description: 'Sistema integral de consultas legales con inteligencia artificial: derecho argentino, análisis de expedientes, estrategias multinivel, generador de escritos y más.',
 };
+
 export default function Home() {
-  return <AbogadoChat />
+  return <Dashboard />;
 }
